@@ -28,6 +28,7 @@ export default function Form() {
 
     putUser(formStates);
   }
+
   return (
     <Flex flexDir='column' w='100%' maxW='668px' textAlign='center' m='0 auto'>
       <Heading>Cadastro</Heading>
