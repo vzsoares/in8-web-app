@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import Profiler from "./components/Profiler";
 import Form from "./components/Form";
