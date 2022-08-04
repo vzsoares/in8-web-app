@@ -25,14 +25,15 @@ export default function Form() {
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+
     putUser(formStates);
   }
   return (
-    <Flex flexDir='column' w='100%' maxW='668px'>
+    <Flex flexDir='column' w='100%' maxW='668px' textAlign='center' m='0 auto'>
       <Heading>Cadastro</Heading>
       <form onSubmit={handleSubmit}>
         <FormControl>
-          <FormLabel>Nome</FormLabel>
+          <FormLabel py='0.5rem'>Nome</FormLabel>
           <Input
             placeholder='seu nome'
             name='name'
@@ -41,7 +42,7 @@ export default function Form() {
           />
         </FormControl>
         <FormControl>
-          <FormLabel>Email</FormLabel>
+          <FormLabel py='0.5rem'>Email</FormLabel>
           <Input
             placeholder='email@email.com'
             name='email'
@@ -50,7 +51,7 @@ export default function Form() {
           />
         </FormControl>
         <FormControl>
-          <FormLabel>Nascimento</FormLabel>
+          <FormLabel py='0.5rem'>Nascimento</FormLabel>
           <Input
             placeholder='dd/mm/year'
             name='birth'
@@ -59,7 +60,7 @@ export default function Form() {
           />
         </FormControl>
         <FormControl>
-          <FormLabel>Telefone</FormLabel>
+          <FormLabel py='0.5rem'>Telefone</FormLabel>
           <Input
             placeholder='(DD) 99999-9999'
             name='number'
@@ -67,7 +68,9 @@ export default function Form() {
             onChange={onChange}
           />
         </FormControl>
-        <Button type='submit'>Cadastrar</Button>
+        <Button type='submit' mt='1rem'>
+          Cadastrar
+        </Button>
       </form>
     </Flex>
   );

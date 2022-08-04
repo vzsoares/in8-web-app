@@ -1,12 +1,23 @@
 import React from "react";
 import Profiler from "./components/Profiler";
 import Form from "./components/Form";
-import { Box, Center, Flex, Heading, Spacer } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, Link } from "@chakra-ui/react";
 import Navbar from "./components/Navbar";
+import RegisteredList from "./components/RegisteredList";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <Flex w='100vw' flexDir='column' minH='100vh' alignItems='center'>
+    <Flex w='100%' flexDir='column' minH='100vh' alignItems='center' id='home'>
+      <Link href='#home' zIndex='99'>
+        <Image
+          src='./icones/topo-pag.svg'
+          w='40px'
+          position='fixed'
+          bottom='5%'
+          left='90%'
+        />
+      </Link>
       <Flex
         alignItems='center'
         w='100%'
@@ -30,8 +41,11 @@ function App() {
       </Flex>
       <Flex w='100%' justifyContent='center' p='2rem'>
         <Box w='100%' maxW='998px'>
-          <Form />
+          <RegisteredList />
         </Box>
+      </Flex>
+      <Flex w='100%' justifyContent='center'>
+        <Footer />
       </Flex>
     </Flex>
   );

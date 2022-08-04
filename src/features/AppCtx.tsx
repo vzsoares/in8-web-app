@@ -13,7 +13,7 @@ function AppCtxProvider({ children }: { children: JSX.Element }) {
     const response = await fetch(URL, {
       method: "POST",
       mode: "no-cors",
-      body: JSON.stringify({ test: 123 }),
+      body: JSON.stringify(data),
       headers: {
         Accept: "application/json",
         "Content-type": "application/json;charset=UTF-8",
