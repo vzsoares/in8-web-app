@@ -7,8 +7,10 @@ import {
   Heading,
   Button,
 } from "@chakra-ui/react";
+import { useAppCtx } from "../features/AppCtx";
 
 export default function Form() {
+  const { putUser } = useAppCtx();
   const [formStates, setFormStates] = useState({
     name: "",
     email: "",
@@ -23,7 +25,7 @@ export default function Form() {
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    console.log("test");
+    putUser(formStates);
   }
   return (
     <Flex flexDir='column' w='100%' maxW='668px'>
