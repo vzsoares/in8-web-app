@@ -6,8 +6,6 @@ const usersRouter = express.Router();
 // post
 usersRouter.post("/users", (req, res) => {
   const user = req.body;
-  console.log(user);
-  // TODO fix user
   userRepository.post(user, (id) => {
     if (id) {
       res.status(201).location(`/itens/${id}`).send();

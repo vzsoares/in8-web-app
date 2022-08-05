@@ -1,27 +1,27 @@
 import { createContext, useContext, useMemo } from "react";
 import { User } from "../models/User";
 
-const defaultValue = { putUser: async (data: User) => {} };
+const defaultValue = { putUser: async (data: User) => 0 };
 
 const AppCtx = createContext(defaultValue);
 
 function AppCtxProvider({ children }: { children: JSX.Element }) {
   async function putUser(data: User) {
     const URL = "http://localhost:4000/api/users";
-    console.log(JSON.stringify(data));
 
-    const response = await fetch(URL, {
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    const raw = JSON.stringify(data);
+    const requestOptions: any = {
       method: "POST",
-      mode: "no-cors",
-      body: JSON.stringify(data),
-      headers: {
-        Accept: "application/json",
-        "Content-type": "application/json;charset=UTF-8",
-      },
-    });
-    console.log(response);
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    };
 
-    // return response.json() ?? "";
+    const response = await fetch(URL, requestOptions);
+    return response.status ?? "";
   }
 
   const data = useMemo(() => {

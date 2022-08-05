@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Box,
   Heading,
@@ -9,41 +10,13 @@ import {
   Td,
   TableContainer,
 } from "@chakra-ui/react";
-import React from "react";
+import useSWR from "swr";
 
 export default function RegisteredList() {
-  const mockData = [
-    {
-      name: "name",
-      email: "email@email.com",
-      birth: "12/12/1222",
-      number: "31 99999999",
-    },
-    {
-      name: "name",
-      email: "email@email.com",
-      birth: "12/12/1222",
-      number: "31 99999999",
-    },
-    {
-      name: "name",
-      email: "email@email.com",
-      birth: "12/12/1222",
-      number: "31 99999999",
-    },
-    {
-      name: "name",
-      email: "email@email.com",
-      birth: "12/12/1222",
-      number: "31 99999999",
-    },
-    {
-      name: "name",
-      email: "email@email.com",
-      birth: "12/12/1222",
-      number: "31 99999999",
-    },
-  ];
+  const { data } = useSWR("http://localhost:4000/api/users", (apiURL: string) =>
+    fetch(apiURL).then((res) => res.json())
+  );
+
   return (
     <Box>
       <Heading mb='2rem' textAlign='center'>
@@ -61,7 +34,7 @@ export default function RegisteredList() {
             </Tr>
           </Thead>
           <Tbody>
-            {mockData.map(({ name, email, birth, number }, index) => {
+            {data?.map(({ name, email, birth, number }: any, index: number) => {
               return (
                 <Tr key={index}>
                   <Td>{index + 1}</Td>

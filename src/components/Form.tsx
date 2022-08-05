@@ -23,10 +23,14 @@ export default function Form() {
     setFormStates({ ...formStates, [e.target.name]: e.target.value });
   }
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-
-    putUser(formStates);
+    // TODO validate formStates
+    const err = await putUser(formStates).then((n) => n);
+    if (err !== 201) {
+      console.log("server error");
+    }
+    // TODO error toast
   }
 
   return (

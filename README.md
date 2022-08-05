@@ -5,6 +5,9 @@
 
 ## used techs
 
+- sqlite3
+- typescript
+- react
 - front back communication : **swr**
 - run server : **nodemon**
 - style management :**chakra-ui**
