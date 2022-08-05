@@ -1,7 +1,8 @@
 ## run as follows
 
-- first run server.ts
-- then run yarn start
+- instal deps with yarn install
+- run `nodemon server.ts` at /server
+- run `yarn start` at root
 
 ## used techs
 
