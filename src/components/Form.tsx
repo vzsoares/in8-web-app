@@ -9,6 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { useAppCtx } from "../features/AppCtx";
 import { User } from "../models/User";
+import useCustomToast from "../hooks/useToast";
 
 const defaultFormState = {
   name: "",
@@ -19,6 +20,7 @@ const defaultFormState = {
 
 export default function Form() {
   const { postUser } = useAppCtx();
+  const { errorToast, successToast } = useCustomToast();
   const [formStates, setFormStates] = useState<User>(defaultFormState);
   const { name, email, birth, number } = formStates;
 
@@ -31,9 +33,10 @@ export default function Form() {
     // TODO validate formStates
     const err = await postUser(formStates).then((n) => n);
 
-    if (err !== 201) {
-      console.log("server error");
-    }
+    if (err !== 201) return errorToast("server error");
+
+    successToast("Cadastrado com sucesso");
+    setFormStates(defaultFormState);
     // TODO error toast
   }
 
