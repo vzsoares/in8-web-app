@@ -6,22 +6,24 @@ const Fonts = () => (
       /* latin */
       @font-face {
         font-family: 'RobotoRegular';
-        src: url('./fonts/Roboto-Regular_0.ttf');
+        src: url('./fonts/Roboto-Regular.woff2');
       }
       /* latin */
       @font-face {
         font-family: 'RobotoLight';
-        src: url('./fonts/Roboto-Light_0.ttf');
+        src: url('./fonts/Roboto-Light.woff2');
+        font-weight: 300;
       }
       /* latin */
       @font-face {
-        font-family: 'ps';
-        src: url('./fonts/ps.ttf');
+        font-family: 'HelveticaCondensed';
+        src: url('./fonts/Helvetica-Condensed.woff2');
       }
       /* latin */
       @font-face {
         font-family: 'HelveticaUltraLt';
-        src: url('./fonts/HelveticaUltraLt_0.ttf');
+        src: url('./fonts/HelveticaNeue-UltraLight.woff2');
+        font-weight: 200;
       }
       `}
   />

@@ -18,10 +18,18 @@ export default function Footer() {
       p='0.5rem'
     >
       <Box color='white' textAlign='center'>
-        <Text py='0.5rem'>Vinicius Zenha De Oliveira Soares</Text>
-        <Text pb='0.5rem'>vinicius.zenha@gmail.com</Text>
-        <Text>(31)9 92037581</Text>
-        <Text py='0.5rem'>Teste i8n</Text>
+        <Text py='0.5rem' fontFamily='RobotoLight' fontWeight='300'>
+          Vinicius Zenha De Oliveira Soares
+        </Text>
+        <Text pb='0.5rem' fontFamily='RobotoLight' fontWeight='300'>
+          vinicius.zenha@gmail.com
+        </Text>
+        <Text fontFamily='RobotoLight' fontWeight='300'>
+          (31)9 92037581
+        </Text>
+        <Text py='0.5rem' fontFamily='RobotoLight' fontWeight='300'>
+          Teste i8n
+        </Text>
       </Box>
     </Flex>
   );

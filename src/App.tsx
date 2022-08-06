@@ -18,7 +18,7 @@ function App() {
           base: "./imagens/index-image-mobile.jpg",
           md: "./imagens/index-image.jpg",
         }}
-        minH={{ base: "100vh", md: "40vh" }}
+        minH={{ base: "100vh", md: "60vh" }}
         backgroundPosition='center'
         backgroundSize='cover'
         flexDir='column'
@@ -35,17 +35,17 @@ function App() {
           top='40%'
         >
           <Heading
-            fontSize='xxx-large'
+            fontSize='5rem'
             letterSpacing='widest'
             fontFamily='HelveticaUltraLt'
-            fontWeight='thin'
+            fontWeight='200'
           >
             Estagio
           </Heading>
           <Heading
-            fontSize='x-large'
+            fontSize='2.5rem'
             fontFamily='HelveticaUltraLt'
-            fontWeight='thin'
+            fontWeight='200'
           >
             Prova de seleção
           </Heading>

@@ -31,7 +31,8 @@ export default function RegisteredList() {
         textAlign='center'
         color='#29abe2'
         fontFamily='HelveticaUltraLt'
-        fontWeight='thin'
+        fontWeight='200'
+        fontSize='3rem'
       >
         Lista de Cadastro
       </Heading>
@@ -45,7 +46,9 @@ export default function RegisteredList() {
         >
           <TabList>
             {users?.map((_, i) => (
-              <Tab key={i}>{i + 1}</Tab>
+              <Tab key={i} fontFamily='RobotoLight' fontWeight='300'>
+                {i + 1}
+              </Tab>
             ))}
           </TabList>
           <TabPanels>
@@ -55,20 +58,36 @@ export default function RegisteredList() {
                   <TabPanel key={index}>
                     <Flex flexDir='column' gap='5'>
                       <Flex borderBottom='1px solid #29abe2'>
-                        <Text w='60px'>Nome</Text>
-                        <Text color='#808080'>{name}</Text>
+                        <Text w='60px' fontFamily='robotoRegular'>
+                          Nome
+                        </Text>
+                        <Text color='#808080' fontFamily='HelveticaCondensed'>
+                          {name}
+                        </Text>
                       </Flex>
                       <Flex borderBottom='1px solid #29abe2'>
-                        <Text w='60px'>Email</Text>
-                        <Text color='#808080'>{email}</Text>
+                        <Text w='60px' fontFamily='robotoRegular'>
+                          Email
+                        </Text>
+                        <Text color='#808080' fontFamily='HelveticaCondensed'>
+                          {email}
+                        </Text>
                       </Flex>
                       <Flex borderBottom='1px solid #29abe2'>
-                        <Text w='60px'>Nasc.</Text>
-                        <Text color='#808080'>{birth}</Text>
+                        <Text w='60px' fontFamily='robotoRegular'>
+                          Nasc.
+                        </Text>
+                        <Text color='#808080' fontFamily='HelveticaCondensed'>
+                          {birth}
+                        </Text>
                       </Flex>
                       <Flex borderBottom='1px solid #29abe2'>
-                        <Text w='60px'>tel</Text>
-                        <Text color='#808080'>{number}</Text>
+                        <Text w='60px' fontFamily='robotoRegular'>
+                          Tel
+                        </Text>
+                        <Text color='#808080' fontFamily='HelveticaCondensed'>
+                          {number}
+                        </Text>
                       </Flex>
                     </Flex>
                   </TabPanel>
@@ -87,10 +106,10 @@ export default function RegisteredList() {
             <Thead>
               <Tr color='#012d51'>
                 <Th> </Th>
-                <Th>Nome</Th>
-                <Th>Email</Th>
-                <Th>Nascimento</Th>
-                <Th>Telefone</Th>
+                <Th fontFamily='robotoRegular'>Nome</Th>
+                <Th fontFamily='robotoRegular'>Email</Th>
+                <Th fontFamily='robotoRegular'>Nascimento</Th>
+                <Th fontFamily='robotoRegular'>Telefone</Th>
               </Tr>
             </Thead>
             <Tbody>
@@ -98,11 +117,25 @@ export default function RegisteredList() {
                 ({ name, email, birth, number }: User, index: number) => {
                   return (
                     <Tr key={index}>
-                      <Td color='#012d51'>{index + 1}</Td>
-                      <Td color='#808080'>{name}</Td>
-                      <Td color='#808080'>{email}</Td>
-                      <Td color='#808080'>{birth}</Td>
-                      <Td color='#808080'>{number}</Td>
+                      <Td
+                        color='#012d51'
+                        fontFamily='RobotoLight'
+                        fontWeight='300'
+                      >
+                        {index + 1}
+                      </Td>
+                      <Td color='#808080' fontFamily='HelveticaCondensed'>
+                        {name}
+                      </Td>
+                      <Td color='#808080' fontFamily='HelveticaCondensed'>
+                        {email}
+                      </Td>
+                      <Td color='#808080' fontFamily='HelveticaCondensed'>
+                        {birth}
+                      </Td>
+                      <Td color='#808080' fontFamily='HelveticaCondensed'>
+                        {number}
+                      </Td>
                     </Tr>
                   );
                 }

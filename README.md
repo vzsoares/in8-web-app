@@ -12,3 +12,7 @@
 - swr
 - nodemon
 - chakra-ui
+
+### notes
+
+- fonts converted with https://transfonter.org/ due to unsupported .ttf format by chrome

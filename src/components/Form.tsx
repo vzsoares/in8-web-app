@@ -51,47 +51,51 @@ export default function Form() {
     <Flex flexDir='column' w='100%' maxW='668px' textAlign='center' m='0 auto'>
       <Heading
         color='white'
-        fontSize='3xl'
         fontFamily='HelveticaUltraLt'
-        fontWeight='thin'
+        fontWeight='200'
+        fontSize='3rem'
       >
         Cadastro
       </Heading>
       <form onSubmit={handleSubmit}>
         <FormControl py='0.5rem'>
-          <FormLabel>Nome</FormLabel>
+          <FormLabel fontFamily='robotoRegular'>Nome</FormLabel>
           <Input
             placeholder='seu nome'
             name='name'
             value={name}
             onChange={onChange}
+            fontFamily='HelveticaCondensed'
           />
         </FormControl>
         <FormControl py='0.5rem'>
-          <FormLabel>Email</FormLabel>
+          <FormLabel fontFamily='robotoRegular'>Email</FormLabel>
           <Input
             placeholder='email@email.com'
             name='email'
             value={email}
             onChange={onChange}
+            fontFamily='HelveticaCondensed'
           />
         </FormControl>
         <FormControl py='0.5rem'>
-          <FormLabel>Nascimento</FormLabel>
+          <FormLabel fontFamily='robotoRegular'>Nascimento</FormLabel>
           <Input
             placeholder='dd/mm/year'
             name='birth'
             value={birth}
             onChange={onChange}
+            fontFamily='HelveticaCondensed'
           />
         </FormControl>
         <FormControl py='0.5rem'>
-          <FormLabel>Telefone</FormLabel>
+          <FormLabel fontFamily='robotoRegular'>Telefone</FormLabel>
           <Input
             placeholder='(DD) 99999-9999'
             name='number'
             value={number}
             onChange={onChange}
+            fontFamily='HelveticaCondensed'
           />
         </FormControl>
         <Button
@@ -104,7 +108,7 @@ export default function Form() {
           w='100%'
           maxW='366px'
           fontFamily='HelveticaUltraLt'
-          fontWeight='thin'
+          fontWeight='200'
           isLoading={isLoading}
         >
           Cadastrar
