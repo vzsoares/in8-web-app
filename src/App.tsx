@@ -29,7 +29,7 @@ function App() {
           color='white'
           w='100%'
           maxW='998px'
-          px='3.5rem'
+          px={{ base: "2rem", md: "3.5rem" }}
           textAlign={{ base: "center", sm: "start" }}
           position='absolute'
           top='40%'

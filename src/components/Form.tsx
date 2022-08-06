@@ -35,13 +35,13 @@ export default function Form() {
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (validateForm()) return errorToast("por favor preencha os campos");
+    if (validateForm()) return errorToast("Por favor preencha os campos");
 
     setIsLoading(true);
     const err = await postUser(formStates).then((n) => n);
     setIsLoading(false);
 
-    if (err !== 201) return errorToast("server error");
+    if (err !== 201) return errorToast("Server error");
 
     successToast("Cadastrado com sucesso");
     setFormStates(defaultFormState);
@@ -103,13 +103,15 @@ export default function Form() {
           mt='1rem'
           backgroundColor='#012d51'
           color='#29abe2'
-          fontSize='3xl'
+          fontSize='3rem'
           borderRadius='none'
           w='100%'
-          maxW='366px'
+          maxW='468px'
+          h='100%'
           fontFamily='HelveticaUltraLt'
           fontWeight='200'
           isLoading={isLoading}
+          p='0.5rem'
         >
           Cadastrar
         </Button>

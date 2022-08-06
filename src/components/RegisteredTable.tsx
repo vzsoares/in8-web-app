@@ -105,10 +105,16 @@ export default function RegisteredList() {
           >
             <Thead>
               <Tr color='#012d51'>
-                <Th> </Th>
-                <Th fontFamily='robotoRegular'>Nome</Th>
-                <Th fontFamily='robotoRegular'>Email</Th>
-                <Th fontFamily='robotoRegular'>Nascimento</Th>
+                <Th borderRight='1px solid #B2F5EA'> </Th>
+                <Th fontFamily='robotoRegular' borderRight='1px solid #B2F5EA'>
+                  Nome
+                </Th>
+                <Th fontFamily='robotoRegular' borderRight='1px solid #B2F5EA'>
+                  Email
+                </Th>
+                <Th fontFamily='robotoRegular' borderRight='1px solid #B2F5EA'>
+                  Nascimento
+                </Th>
                 <Th fontFamily='robotoRegular'>Telefone</Th>
               </Tr>
             </Thead>
@@ -121,19 +127,60 @@ export default function RegisteredList() {
                         color='#012d51'
                         fontFamily='RobotoLight'
                         fontWeight='300'
+                        borderRight='1px solid #B2F5EA'
+                        borderBottom={
+                          users.length === index + 1
+                            ? "none"
+                            : "1px solid #B2F5EA"
+                        }
                       >
                         {index + 1}
                       </Td>
-                      <Td color='#808080' fontFamily='HelveticaCondensed'>
+                      <Td
+                        color='#808080'
+                        fontFamily='HelveticaCondensed'
+                        borderRight='1px solid #B2F5EA'
+                        borderBottom={
+                          users.length === index + 1
+                            ? "none"
+                            : "1px solid #B2F5EA"
+                        }
+                      >
                         {name}
                       </Td>
-                      <Td color='#808080' fontFamily='HelveticaCondensed'>
+                      <Td
+                        color='#808080'
+                        fontFamily='HelveticaCondensed'
+                        borderRight='1px solid #B2F5EA'
+                        borderBottom={
+                          users.length === index + 1
+                            ? "none"
+                            : "1px solid #B2F5EA"
+                        }
+                      >
                         {email}
                       </Td>
-                      <Td color='#808080' fontFamily='HelveticaCondensed'>
+                      <Td
+                        color='#808080'
+                        fontFamily='HelveticaCondensed'
+                        borderRight='1px solid #B2F5EA'
+                        borderBottom={
+                          users.length === index + 1
+                            ? "none"
+                            : "1px solid #B2F5EA"
+                        }
+                      >
                         {birth}
                       </Td>
-                      <Td color='#808080' fontFamily='HelveticaCondensed'>
+                      <Td
+                        color='#808080'
+                        fontFamily='HelveticaCondensed'
+                        borderBottom={
+                          users.length === index + 1
+                            ? "none"
+                            : "1px solid #B2F5EA"
+                        }
+                      >
                         {number}
                       </Td>
                     </Tr>

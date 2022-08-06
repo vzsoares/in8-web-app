@@ -15,7 +15,7 @@ export default function Footer() {
       backgroundSize='cover'
       flexDir='column'
       justifyContent='center'
-      p='0.5rem'
+      p='2rem'
     >
       <Box color='white' textAlign='center'>
         <Text py='0.5rem' fontFamily='RobotoLight' fontWeight='300'>
@@ -25,7 +25,7 @@ export default function Footer() {
           vinicius.zenha@gmail.com
         </Text>
         <Text fontFamily='RobotoLight' fontWeight='300'>
-          (31)9 92037581
+          (31)9 9203-7581
         </Text>
         <Text py='0.5rem' fontFamily='RobotoLight' fontWeight='300'>
           Teste i8n
