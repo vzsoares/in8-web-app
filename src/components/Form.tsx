@@ -44,8 +44,8 @@ export default function Form() {
     <Flex flexDir='column' w='100%' maxW='668px' textAlign='center' m='0 auto'>
       <Heading>Cadastro</Heading>
       <form onSubmit={handleSubmit}>
-        <FormControl>
-          <FormLabel py='0.5rem'>Nome</FormLabel>
+        <FormControl py='0.5rem'>
+          <FormLabel>Nome</FormLabel>
           <Input
             placeholder='seu nome'
             name='name'
@@ -53,8 +53,8 @@ export default function Form() {
             onChange={onChange}
           />
         </FormControl>
-        <FormControl>
-          <FormLabel py='0.5rem'>Email</FormLabel>
+        <FormControl py='0.5rem'>
+          <FormLabel>Email</FormLabel>
           <Input
             placeholder='email@email.com'
             name='email'
@@ -62,8 +62,8 @@ export default function Form() {
             onChange={onChange}
           />
         </FormControl>
-        <FormControl>
-          <FormLabel py='0.5rem'>Nascimento</FormLabel>
+        <FormControl py='0.5rem'>
+          <FormLabel>Nascimento</FormLabel>
           <Input
             placeholder='dd/mm/year'
             name='birth'
@@ -71,8 +71,8 @@ export default function Form() {
             onChange={onChange}
           />
         </FormControl>
-        <FormControl>
-          <FormLabel py='0.5rem'>Telefone</FormLabel>
+        <FormControl py='0.5rem'>
+          <FormLabel>Telefone</FormLabel>
           <Input
             placeholder='(DD) 99999-9999'
             name='number'

@@ -7,7 +7,7 @@ export default function Footer() {
       alignItems='center'
       w='100%'
       backgroundImage='./imagens/rodape-desktop.jpg'
-      h='20vh'
+      minH='20vh'
       backgroundPosition='center'
       backgroundSize='cover'
       flexDir='column'

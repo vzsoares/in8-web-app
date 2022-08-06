@@ -1,22 +1,15 @@
 // TODO https://docs.google.com/forms/d/e/1FAIpQLSeL8L8Kamkz0D5ZEcabdIj8ygJoruAl8FlDaX8bX1pApyC9lQ/viewform
 import React from "react";
 import Form from "./components/Form";
-import { Box, Flex, Heading, Image, Link } from "@chakra-ui/react";
+import { Box, Flex, Heading } from "@chakra-ui/react";
 import Navbar from "./components/Navbar";
 import RegisteredList from "./components/RegisteredTable";
 import Footer from "./components/Footer";
+import ToTopBtn from "./components/ToTopBtn";
 function App() {
   return (
     <Flex w='100%' flexDir='column' minH='100vh' alignItems='center' id='home'>
-      <Link href='#home' zIndex='99'>
-        <Image
-          src='./icones/topo-pag.svg'
-          w='40px'
-          position='fixed'
-          bottom='5%'
-          left='90%'
-        />
-      </Link>
+      <ToTopBtn />
       <Flex
         alignItems='center'
         w='100%'
