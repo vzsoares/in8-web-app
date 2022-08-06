@@ -26,10 +26,15 @@ export default function Navbar() {
         zIndex='90'
         display={isOpen ? "flex" : "none"}
         fontSize='1.5rem'
+        //
       >
-        <Link pb='0.5rem'>cadastro</Link>
-        <Link pb='0.5rem'>sobre mim</Link>
-        <Link pb='0.5rem'>lista</Link>
+        <Link pb='0.5rem' fontFamily='robotoRegular'>
+          cadastro
+        </Link>
+        <Link pb='0.5rem' fontFamily='robotoRegular'>
+          sobre mim
+        </Link>
+        <Link pb='0.5rem' fontFamily='robotoRegular'>lista</Link>
       </Flex>
       {/* hamburger btn */}
       <Link
@@ -57,9 +62,9 @@ export default function Navbar() {
         color='white'
         display={{ base: "none", sm: "flex" }}
       >
-        <Link>cadastro</Link>
-        <Link>● lista</Link>
-        <Link>● sobre mim</Link>
+        <Link fontFamily='robotoRegular'>cadastro</Link>
+        <Link fontFamily='robotoRegular'>● lista</Link>
+        <Link fontFamily='robotoRegular'>● sobre mim</Link>
       </Flex>
     </Flex>
   );

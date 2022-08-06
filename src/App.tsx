@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import RegisteredList from "./components/RegisteredTable";
 import Footer from "./components/Footer";
 import ToTopBtn from "./components/ToTopBtn";
+
 function App() {
   return (
     <Flex w='100%' flexDir='column' minH='100vh' alignItems='center' id='home'>
@@ -34,10 +35,20 @@ function App() {
           position='absolute'
           top='40%'
         >
-          <Heading fontSize='xxx-large' letterSpacing='widest'>
+          <Heading
+            fontSize='xxx-large'
+            letterSpacing='widest'
+            fontFamily='HelveticaUltraLt'
+            fontWeight='thin'
+          >
             Estagio
           </Heading>
-          <Heading fontSize='x-large' letterSpacing='wide'>
+          <Heading
+            fontSize='x-large'
+            letterSpacing='wide'
+            fontFamily='HelveticaUltraLt'
+            fontWeight='thin'
+          >
             Prova seleção
           </Heading>
         </Box>

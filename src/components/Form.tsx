@@ -42,7 +42,12 @@ export default function Form() {
 
   return (
     <Flex flexDir='column' w='100%' maxW='668px' textAlign='center' m='0 auto'>
-      <Heading color='white' fontSize='3xl'>
+      <Heading
+        color='white'
+        fontSize='3xl'
+        fontFamily='HelveticaUltraLt'
+        fontWeight='thin'
+      >
         Cadastro
       </Heading>
       <form onSubmit={handleSubmit}>
@@ -91,6 +96,8 @@ export default function Form() {
           borderRadius='none'
           w='100%'
           maxW='366px'
+          fontFamily='HelveticaUltraLt'
+          fontWeight='thin'
         >
           Cadastrar
         </Button>
