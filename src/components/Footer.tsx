@@ -6,8 +6,11 @@ export default function Footer() {
     <Flex
       alignItems='center'
       w='100%'
-      backgroundImage='./imagens/rodape-desktop.jpg'
-      minH='20vh'
+      backgroundImage={{
+        base: "././imagens/rodape-mobile.jpg",
+        md: "./imagens/rodape-desktop.jpg",
+      }}
+      minH={{ base: "35vh", md: "20vh" }}
       backgroundPosition='center'
       backgroundSize='cover'
       flexDir='column'
