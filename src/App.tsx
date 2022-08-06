@@ -3,7 +3,7 @@ import React from "react";
 import Form from "./components/Form";
 import { Box, Flex, Heading, Image, Link } from "@chakra-ui/react";
 import Navbar from "./components/Navbar";
-import RegisteredList from "./components/RegisteredList";
+import RegisteredList from "./components/RegisteredTable";
 import Footer from "./components/Footer";
 function App() {
   return (
