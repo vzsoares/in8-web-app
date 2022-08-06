@@ -21,6 +21,7 @@ const defaultFormState = {
 export default function Form() {
   const { postUser } = useAppCtx();
   const { errorToast, successToast } = useCustomToast();
+  const [isLoading, setIsLoading] = useState(false);
   const [formStates, setFormStates] = useState<User>(defaultFormState);
   const { name, email, birth, number } = formStates;
 
@@ -28,16 +29,22 @@ export default function Form() {
     setFormStates({ ...formStates, [e.target.name]: e.target.value });
   }
 
+  function validateForm() {
+    return Object.values(formStates).some((e) => e.length < 5);
+  }
+
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    // TODO validate formStates
+    if (validateForm()) return errorToast("por favor preencha os campos");
+
+    setIsLoading(true);
     const err = await postUser(formStates).then((n) => n);
+    setIsLoading(false);
 
     if (err !== 201) return errorToast("server error");
 
     successToast("Cadastrado com sucesso");
     setFormStates(defaultFormState);
-    // TODO error toast
   }
 
   return (
@@ -98,6 +105,7 @@ export default function Form() {
           maxW='366px'
           fontFamily='HelveticaUltraLt'
           fontWeight='thin'
+          isLoading={isLoading}
         >
           Cadastrar
         </Button>

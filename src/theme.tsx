@@ -4,7 +4,7 @@ const theme = extendTheme({
   fonts: {
     robotoRegular: `'RobotoRegular' , sans-serif`,
     RobotoLight: `'RobotoLight', sans-serif`,
-    ps: `'ps', sans-serif`,
+    ps: `'HelveticaRegular', sans-serif`,
     HelveticaUltraLt: `'HelveticaUltraLt', sans-serif`,
   },
 });

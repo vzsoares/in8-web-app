@@ -24,7 +24,6 @@ function App() {
         flexDir='column'
         position='relative'
       >
-        {/* TODO hamburger navbar */}
         <Navbar />
         <Box
           color='white'
@@ -45,11 +44,10 @@ function App() {
           </Heading>
           <Heading
             fontSize='x-large'
-            letterSpacing='wide'
             fontFamily='HelveticaUltraLt'
             fontWeight='thin'
           >
-            Prova seleção
+            Prova de seleção
           </Heading>
         </Box>
       </Flex>
@@ -60,7 +58,6 @@ function App() {
       </Flex>
       <Flex w='100%' justifyContent='center' p='2rem'>
         <Box w='100%' maxW='998px'>
-          {/* TODO tabs */}
           <RegisteredList />
         </Box>
       </Flex>

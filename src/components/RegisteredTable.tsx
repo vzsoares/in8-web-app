@@ -35,48 +35,50 @@ export default function RegisteredList() {
       >
         Lista de Cadastro
       </Heading>
-      <TableContainer>
-        <Skeleton isLoaded={users ? users.length > 0 : false} minH='10vh'>
-          {/*  */}
-          <Tabs
-            variant='enclosed-colored'
-            colorScheme='blue'
-            border='1px solid #29abe2'
-            display={{ base: "block", md: "none" }}
-          >
-            <TabList>
-              {users?.map((_, i) => (
-                <Tab>{i + 1}</Tab>
-              ))}
-            </TabList>
-            <TabPanels>
-              {users?.map(({ name, email, birth, number }: User) => {
+      <Skeleton isLoaded={users ? users.length > 0 : false} minH='10vh'>
+        {/*  */}
+        <Tabs
+          variant='enclosed-colored'
+          colorScheme='blue'
+          border='1px solid #29abe2'
+          display={{ base: "block", md: "none" }}
+        >
+          <TabList>
+            {users?.map((_, i) => (
+              <Tab key={i}>{i + 1}</Tab>
+            ))}
+          </TabList>
+          <TabPanels>
+            {users?.map(
+              ({ name, email, birth, number }: User, index: number) => {
                 return (
-                  <TabPanel>
+                  <TabPanel key={index}>
                     <Flex flexDir='column' gap='5'>
                       <Flex borderBottom='1px solid #29abe2'>
-                        <Text w='50px'>Nome</Text>
+                        <Text w='60px'>Nome</Text>
                         <Text color='#808080'>{name}</Text>
                       </Flex>
                       <Flex borderBottom='1px solid #29abe2'>
-                        <Text w='50px'>Email</Text>
+                        <Text w='60px'>Email</Text>
                         <Text color='#808080'>{email}</Text>
                       </Flex>
                       <Flex borderBottom='1px solid #29abe2'>
-                        <Text w='50px'>Nasc.</Text>
+                        <Text w='60px'>Nasc.</Text>
                         <Text color='#808080'>{birth}</Text>
                       </Flex>
                       <Flex borderBottom='1px solid #29abe2'>
-                        <Text w='50px'>tel</Text>
+                        <Text w='60px'>tel</Text>
                         <Text color='#808080'>{number}</Text>
                       </Flex>
                     </Flex>
                   </TabPanel>
                 );
-              })}
-            </TabPanels>
-          </Tabs>
-          {/*  */}
+              }
+            )}
+          </TabPanels>
+        </Tabs>
+        {/*  */}
+        <TableContainer>
           <Table
             variant='simple'
             colorScheme='teal'
@@ -107,8 +109,8 @@ export default function RegisteredList() {
               )}
             </Tbody>
           </Table>
-        </Skeleton>
-      </TableContainer>
+        </TableContainer>
+      </Skeleton>
     </Box>
   );
 }
