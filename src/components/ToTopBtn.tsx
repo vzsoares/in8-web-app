@@ -6,7 +6,7 @@ export default function ToTopBtn() {
     <Link href='#home' zIndex='99'>
       <Image
         src='./icones/topo-pag.svg'
-        w='40px'
+        w={{ base: "25px", sm: "30px", md: "40px" }}
         position='fixed'
         bottom='5%'
         left='90%'
