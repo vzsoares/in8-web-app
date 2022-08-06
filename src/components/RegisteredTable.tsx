@@ -36,7 +36,7 @@ export default function RegisteredList() {
         Lista de Cadastro
       </Heading>
       <TableContainer>
-        <Skeleton isLoaded={users ? users.length > 0 : false}>
+        <Skeleton isLoaded={users ? users.length > 0 : false} minH='10vh'>
           {/*  */}
           <Tabs
             variant='enclosed-colored'
