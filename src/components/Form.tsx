@@ -10,7 +10,7 @@ import {
 import { useAppCtx } from "../features/AppCtx";
 
 export default function Form() {
-  const { putUser } = useAppCtx();
+  const { postUser } = useAppCtx();
   const [formStates, setFormStates] = useState({
     name: "",
     email: "",
@@ -26,7 +26,7 @@ export default function Form() {
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     // TODO validate formStates
-    const err = await putUser(formStates).then((n) => n);
+    const err = await postUser(formStates).then((n) => n);
     if (err !== 201) {
       console.log("server error");
     }

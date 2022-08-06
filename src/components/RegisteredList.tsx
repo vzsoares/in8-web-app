@@ -10,12 +10,10 @@ import {
   Td,
   TableContainer,
 } from "@chakra-ui/react";
-import useSWR from "swr";
+import useUsers from "../hooks/useUsers";
 
 export default function RegisteredList() {
-  const { data } = useSWR("http://localhost:4000/api/users", (apiURL: string) =>
-    fetch(apiURL).then((res) => res.json())
-  );
+  const { users } = useUsers();
 
   return (
     <Box>
@@ -34,17 +32,19 @@ export default function RegisteredList() {
             </Tr>
           </Thead>
           <Tbody>
-            {data?.map(({ name, email, birth, number }: any, index: number) => {
-              return (
-                <Tr key={index}>
-                  <Td>{index + 1}</Td>
-                  <Td>{name}</Td>
-                  <Td>{email}</Td>
-                  <Td>{birth}</Td>
-                  <Td>{number}</Td>
-                </Tr>
-              );
-            })}
+            {users?.map(
+              ({ name, email, birth, number }: any, index: number) => {
+                return (
+                  <Tr key={index}>
+                    <Td>{index + 1}</Td>
+                    <Td>{name}</Td>
+                    <Td>{email}</Td>
+                    <Td>{birth}</Td>
+                    <Td>{number}</Td>
+                  </Tr>
+                );
+              }
+            )}
           </Tbody>
         </Table>
       </TableContainer>

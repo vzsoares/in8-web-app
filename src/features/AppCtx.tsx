@@ -1,12 +1,12 @@
 import { createContext, useContext, useMemo } from "react";
 import { User } from "../models/User";
 
-const defaultValue = { putUser: async (data: User) => 0 };
+const defaultValue = { postUser: async (data: User) => 0 };
 
 const AppCtx = createContext(defaultValue);
 
 function AppCtxProvider({ children }: { children: JSX.Element }) {
-  async function putUser(data: User) {
+  async function postUser(data: User) {
     const URL = "http://localhost:4000/api/users";
 
     const myHeaders = new Headers();
@@ -25,7 +25,7 @@ function AppCtxProvider({ children }: { children: JSX.Element }) {
   }
 
   const data = useMemo(() => {
-    return { putUser };
+    return { postUser };
   }, []);
   return <AppCtx.Provider value={data}>{children}</AppCtx.Provider>;
 }
