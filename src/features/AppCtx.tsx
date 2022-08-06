@@ -13,15 +13,17 @@ function AppCtxProvider({ children }: { children: JSX.Element }) {
     myHeaders.append("Content-Type", "application/json");
 
     const raw = JSON.stringify(data);
-    const requestOptions: any = {
+    const requestOptions: RequestInit = {
       method: "POST",
       headers: myHeaders,
       body: raw,
       redirect: "follow",
     };
 
-    const response = await fetch(URL, requestOptions);
-    return response.status ?? "";
+    const response = await fetch(URL, requestOptions)
+      .then((r) => r.status)
+      .catch(() => 400);
+    return response ?? 0;
   }
 
   const data = useMemo(() => {

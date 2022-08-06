@@ -8,15 +8,18 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { useAppCtx } from "../features/AppCtx";
+import { User } from "../models/User";
+
+const defaultFormState = {
+  name: "",
+  email: "",
+  birth: "",
+  number: "",
+};
 
 export default function Form() {
   const { postUser } = useAppCtx();
-  const [formStates, setFormStates] = useState({
-    name: "",
-    email: "",
-    birth: "",
-    number: "",
-  });
+  const [formStates, setFormStates] = useState<User>(defaultFormState);
   const { name, email, birth, number } = formStates;
 
   function onChange(e: ChangeEvent<HTMLInputElement>) {
@@ -27,6 +30,7 @@ export default function Form() {
     e.preventDefault();
     // TODO validate formStates
     const err = await postUser(formStates).then((n) => n);
+
     if (err !== 201) {
       console.log("server error");
     }

@@ -12,10 +12,10 @@ import {
   Skeleton,
 } from "@chakra-ui/react";
 import useUsers from "../hooks/useUsers";
+import { User } from "../models/User";
 
 export default function RegisteredList() {
   const { users } = useUsers();
-  console.log(users);
 
   return (
     <Box>
@@ -36,7 +36,7 @@ export default function RegisteredList() {
             </Thead>
             <Tbody>
               {users?.map(
-                ({ name, email, birth, number }: any, index: number) => {
+                ({ name, email, birth, number }: User, index: number) => {
                   return (
                     <Tr key={index}>
                       <Td>{index + 1}</Td>
