@@ -8,9 +8,9 @@ export default function Footer() {
       w='100%'
       backgroundImage={{
         base: "././imagens/rodape-mobile.jpg",
-        md: "./imagens/rodape-desktop.jpg",
+        sm: "./imagens/rodape-desktop.jpg",
       }}
-      minH={{ base: "35vh", md: "20vh" }}
+      minH={{ base: "45vh", sm: "20vh" }}
       backgroundPosition='center'
       backgroundSize='cover'
       flexDir='column'

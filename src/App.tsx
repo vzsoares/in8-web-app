@@ -13,17 +13,33 @@ function App() {
       <Flex
         alignItems='center'
         w='100%'
-        backgroundImage='./imagens/index-image.jpg'
-        h='40vh'
+        backgroundImage={{
+          base: "./imagens/index-image-mobile.jpg",
+          md: "./imagens/index-image.jpg",
+        }}
+        minH={{ base: "100vh", md: "40vh" }}
         backgroundPosition='center'
         backgroundSize='cover'
         flexDir='column'
+        position='relative'
       >
         {/* TODO hamburger navbar */}
         <Navbar />
-        <Box color='white' w='100%' maxW='998px' pt='5rem' px='1rem'>
-          <Heading>Estagio</Heading>
-          <Heading as='h3'>Prova seleção</Heading>
+        <Box
+          color='white'
+          w='100%'
+          maxW='998px'
+          px='3.5rem'
+          textAlign={{ base: "center", sm: "start" }}
+          position='absolute'
+          top='40%'
+        >
+          <Heading fontSize='xxx-large' letterSpacing='widest'>
+            Estagio
+          </Heading>
+          <Heading fontSize='x-large' letterSpacing='wide'>
+            Prova seleção
+          </Heading>
         </Box>
       </Flex>
       <Flex w='100%' bgColor='#29abe2' justifyContent='center' p='2rem'>
@@ -37,7 +53,6 @@ function App() {
           <RegisteredList />
         </Box>
       </Flex>
-      {/* TODO change img's sizes */}
       <Flex w='100%' justifyContent='center'>
         <Footer />
       </Flex>
