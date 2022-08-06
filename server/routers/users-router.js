@@ -1,5 +1,5 @@
 const express = require("express");
-const userRepository = require("./repositories/users-repository.js");
+const userRepository = require("../repositories/users-repository.js");
 
 const usersRouter = express.Router();
 
