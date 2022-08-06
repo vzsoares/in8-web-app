@@ -26,7 +26,13 @@ export default function RegisteredList() {
 
   return (
     <Box>
-      <Heading mb='2rem' textAlign='center' color='#29abe2'>
+      <Heading
+        mb='2rem'
+        textAlign='center'
+        color='#29abe2'
+        fontFamily='HelveticaUltraLt'
+        fontWeight='thin'
+      >
         Lista de Cadastro
       </Heading>
       <TableContainer>
@@ -48,18 +54,22 @@ export default function RegisteredList() {
                 return (
                   <TabPanel>
                     <Flex flexDir='column' gap='5'>
-                      <Text borderBottom='1px solid #29abe2'>
-                        Nome <span style={{ color: "#808080" }}>{name}</span>
-                      </Text>
-                      <Text borderBottom='1px solid #29abe2'>
-                        Email <span style={{ color: "#808080" }}>{email}</span>
-                      </Text>
-                      <Text borderBottom='1px solid #29abe2' color='#012d51'>
-                        Nasc. <span style={{ color: "#808080" }}>{birth}</span>
-                      </Text>
-                      <Text borderBottom='1px solid #29abe2'>
-                        Tel <span style={{ color: "#808080" }}>{number}</span>
-                      </Text>
+                      <Flex borderBottom='1px solid #29abe2'>
+                        <Text w='50px'>Nome</Text>
+                        <Text color='#808080'>{name}</Text>
+                      </Flex>
+                      <Flex borderBottom='1px solid #29abe2'>
+                        <Text w='50px'>Email</Text>
+                        <Text color='#808080'>{email}</Text>
+                      </Flex>
+                      <Flex borderBottom='1px solid #29abe2'>
+                        <Text w='50px'>Nasc.</Text>
+                        <Text color='#808080'>{birth}</Text>
+                      </Flex>
+                      <Flex borderBottom='1px solid #29abe2'>
+                        <Text w='50px'>tel</Text>
+                        <Text color='#808080'>{number}</Text>
+                      </Flex>
                     </Flex>
                   </TabPanel>
                 );
