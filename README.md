@@ -1,8 +1,8 @@
 ## run as follows
 
 - instal deps with yarn install
-- run `npx nodemon server.ts` at /server
-- run `yarn start` at root /
+- run `yarn dev` to start server
+- run `yarn start` to start app
 
 ## used techs
 
