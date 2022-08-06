@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Flex, Image, Link, Button } from "@chakra-ui/react";
+import { Box, Flex, Image, Link } from "@chakra-ui/react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,7 +32,7 @@ export default function Navbar() {
         <Link pb='0.5rem'>lista</Link>
       </Flex>
       {/* hamburger btn */}
-      <Button
+      <Link
         background='none'
         onClick={() => setIsOpen(!isOpen)}
         display={{ base: "block", sm: "none" }}
@@ -44,9 +44,9 @@ export default function Navbar() {
               ? "./icones/hamburguer-aberto0.svg"
               : "./icones/hamburguer.svg"
           }
-          w='25px'
+          w='30px'
         />
-      </Button>
+      </Link>
       <Box p='0.5rem'>
         <Image src='./logo-in8-dev.svg' w='100px' />
       </Box>

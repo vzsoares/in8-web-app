@@ -42,7 +42,9 @@ export default function Form() {
 
   return (
     <Flex flexDir='column' w='100%' maxW='668px' textAlign='center' m='0 auto'>
-      <Heading>Cadastro</Heading>
+      <Heading color='white' fontSize='3xl'>
+        Cadastro
+      </Heading>
       <form onSubmit={handleSubmit}>
         <FormControl py='0.5rem'>
           <FormLabel>Nome</FormLabel>
@@ -80,7 +82,16 @@ export default function Form() {
             onChange={onChange}
           />
         </FormControl>
-        <Button type='submit' mt='1rem'>
+        <Button
+          type='submit'
+          mt='1rem'
+          backgroundColor='#012d51'
+          color='#29abe2'
+          fontSize='3xl'
+          borderRadius='none'
+          w='100%'
+          maxW='366px'
+        >
           Cadastrar
         </Button>
       </form>
