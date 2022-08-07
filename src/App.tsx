@@ -1,4 +1,3 @@
-// TODO https://docs.google.com/forms/d/e/1FAIpQLSeL8L8Kamkz0D5ZEcabdIj8ygJoruAl8FlDaX8bX1pApyC9lQ/viewform
 import React from "react";
 import Form from "./components/Form";
 import { Box, Flex, Heading } from "@chakra-ui/react";
