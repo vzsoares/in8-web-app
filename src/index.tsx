@@ -1,9 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
 import App from "./App";
+import "./index.css";
+
 import { ChakraProvider } from "@chakra-ui/react";
 import { AppCtxProvider } from "./features/AppCtx";
+
 import Fonts from "./fonts";
 import theme from "./theme";
 

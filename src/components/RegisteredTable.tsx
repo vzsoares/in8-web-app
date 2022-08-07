@@ -24,6 +24,14 @@ import { User } from "../models/User";
 export default function RegisteredList() {
   const { users } = useUsers();
 
+  const infoStyles = { color: "#808080", fontFamily: "HelveticaCondensed" };
+  const tableTitleStyles = { fontFamily: "robotoRegular" };
+  const tableNumberStyles = {
+    fontFamily: "RobotoLight",
+    fontWeight: "300",
+    color: "#012d51",
+  };
+
   return (
     <Box>
       <Heading
@@ -37,7 +45,7 @@ export default function RegisteredList() {
         Lista de Cadastro
       </Heading>
       <Skeleton isLoaded={users ? users.length > 0 : false} minH='10vh'>
-        {/*  */}
+        {/* mobile screen Tabs */}
         <Tabs
           variant='enclosed-colored'
           colorScheme='blue'
@@ -46,7 +54,7 @@ export default function RegisteredList() {
         >
           <TabList>
             {users?.map((_, i) => (
-              <Tab key={i} fontFamily='RobotoLight' fontWeight='300'>
+              <Tab key={i} sx={tableNumberStyles}>
                 {i + 1}
               </Tab>
             ))}
@@ -58,36 +66,28 @@ export default function RegisteredList() {
                   <TabPanel key={index}>
                     <Flex flexDir='column' gap='5'>
                       <Flex borderBottom='1px solid #29abe2'>
-                        <Text w='60px' fontFamily='robotoRegular'>
+                        <Text w='60px' sx={tableTitleStyles}>
                           Nome
                         </Text>
-                        <Text color='#808080' fontFamily='HelveticaCondensed'>
-                          {name}
-                        </Text>
+                        <Text sx={infoStyles}>{name}</Text>
                       </Flex>
                       <Flex borderBottom='1px solid #29abe2'>
-                        <Text w='60px' fontFamily='robotoRegular'>
+                        <Text w='60px' sx={tableTitleStyles}>
                           Email
                         </Text>
-                        <Text color='#808080' fontFamily='HelveticaCondensed'>
-                          {email}
-                        </Text>
+                        <Text sx={infoStyles}>{email}</Text>
                       </Flex>
                       <Flex borderBottom='1px solid #29abe2'>
-                        <Text w='60px' fontFamily='robotoRegular'>
+                        <Text w='60px' sx={tableTitleStyles}>
                           Nasc.
                         </Text>
-                        <Text color='#808080' fontFamily='HelveticaCondensed'>
-                          {birth}
-                        </Text>
+                        <Text sx={infoStyles}>{birth}</Text>
                       </Flex>
                       <Flex borderBottom='1px solid #29abe2'>
-                        <Text w='60px' fontFamily='robotoRegular'>
+                        <Text w='60px' sx={tableTitleStyles}>
                           Tel
                         </Text>
-                        <Text color='#808080' fontFamily='HelveticaCondensed'>
-                          {number}
-                        </Text>
+                        <Text sx={infoStyles}>{number}</Text>
                       </Flex>
                     </Flex>
                   </TabPanel>
@@ -96,7 +96,7 @@ export default function RegisteredList() {
             )}
           </TabPanels>
         </Tabs>
-        {/*  */}
+        {/* bigger screens Table */}
         <TableContainer>
           <Table
             variant='simple'
@@ -106,81 +106,54 @@ export default function RegisteredList() {
             <Thead>
               <Tr color='#012d51'>
                 <Th borderRight='1px solid #B2F5EA'> </Th>
-                <Th fontFamily='robotoRegular' borderRight='1px solid #B2F5EA'>
+                <Th sx={tableTitleStyles} borderRight='1px solid #B2F5EA'>
                   Nome
                 </Th>
-                <Th fontFamily='robotoRegular' borderRight='1px solid #B2F5EA'>
+                <Th sx={tableTitleStyles} borderRight='1px solid #B2F5EA'>
                   Email
                 </Th>
-                <Th fontFamily='robotoRegular' borderRight='1px solid #B2F5EA'>
+                <Th sx={tableTitleStyles} borderRight='1px solid #B2F5EA'>
                   Nascimento
                 </Th>
-                <Th fontFamily='robotoRegular'>Telefone</Th>
+                <Th sx={tableTitleStyles}>Telefone</Th>
               </Tr>
             </Thead>
             <Tbody>
               {users?.map(
                 ({ name, email, birth, number }: User, index: number) => {
+                  const borderBottom =
+                    users.length === index + 1 ? "none" : "1px solid #B2F5EA";
                   return (
                     <Tr key={index}>
                       <Td
-                        color='#012d51'
-                        fontFamily='RobotoLight'
-                        fontWeight='300'
+                        sx={tableNumberStyles}
                         borderRight='1px solid #B2F5EA'
-                        borderBottom={
-                          users.length === index + 1
-                            ? "none"
-                            : "1px solid #B2F5EA"
-                        }
+                        borderBottom={borderBottom}
                       >
                         {index + 1}
                       </Td>
                       <Td
-                        color='#808080'
-                        fontFamily='HelveticaCondensed'
+                        sx={infoStyles}
                         borderRight='1px solid #B2F5EA'
-                        borderBottom={
-                          users.length === index + 1
-                            ? "none"
-                            : "1px solid #B2F5EA"
-                        }
+                        borderBottom={borderBottom}
                       >
                         {name}
                       </Td>
                       <Td
-                        color='#808080'
-                        fontFamily='HelveticaCondensed'
+                        sx={infoStyles}
                         borderRight='1px solid #B2F5EA'
-                        borderBottom={
-                          users.length === index + 1
-                            ? "none"
-                            : "1px solid #B2F5EA"
-                        }
+                        borderBottom={borderBottom}
                       >
                         {email}
                       </Td>
                       <Td
-                        color='#808080'
-                        fontFamily='HelveticaCondensed'
+                        sx={infoStyles}
                         borderRight='1px solid #B2F5EA'
-                        borderBottom={
-                          users.length === index + 1
-                            ? "none"
-                            : "1px solid #B2F5EA"
-                        }
+                        borderBottom={borderBottom}
                       >
                         {birth}
                       </Td>
-                      <Td
-                        color='#808080'
-                        fontFamily='HelveticaCondensed'
-                        borderBottom={
-                          users.length === index + 1
-                            ? "none"
-                            : "1px solid #B2F5EA"
-                        }
-                      >
+                      <Td sx={infoStyles} borderBottom={borderBottom}>
                         {number}
                       </Td>
                     </Tr>

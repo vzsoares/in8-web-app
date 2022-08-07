@@ -3,6 +3,7 @@ import { Box, Flex, Image, Link } from "@chakra-ui/react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const linkStyle = { fontFamily: "robotoRegular" };
   return (
     <Flex
       w='100%'
@@ -28,13 +29,15 @@ export default function Navbar() {
         fontSize='1.5rem'
         //
       >
-        <Link pb='0.5rem' fontFamily='robotoRegular'>
+        <Link pb='0.5rem' sx={linkStyle}>
           cadastro
         </Link>
-        <Link pb='0.5rem' fontFamily='robotoRegular'>
+        <Link pb='0.5rem' sx={linkStyle}>
           sobre mim
         </Link>
-        <Link pb='0.5rem' fontFamily='robotoRegular'>lista</Link>
+        <Link pb='0.5rem' sx={linkStyle}>
+          lista
+        </Link>
       </Flex>
       {/* hamburger btn */}
       <Link
@@ -62,9 +65,9 @@ export default function Navbar() {
         color='white'
         display={{ base: "none", sm: "flex" }}
       >
-        <Link fontFamily='robotoRegular'>cadastro</Link>
-        <Link fontFamily='robotoRegular'>● lista</Link>
-        <Link fontFamily='robotoRegular'>● sobre mim</Link>
+        <Link sx={linkStyle}>cadastro</Link>
+        <Link sx={linkStyle}>● lista</Link>
+        <Link sx={linkStyle}>● sobre mim</Link>
       </Flex>
     </Flex>
   );

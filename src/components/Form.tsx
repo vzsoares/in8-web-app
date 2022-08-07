@@ -7,6 +7,7 @@ import {
   Heading,
   Button,
 } from "@chakra-ui/react";
+
 import { useAppCtx } from "../features/AppCtx";
 import { User } from "../models/User";
 import useCustomToast from "../hooks/useToast";
@@ -47,6 +48,9 @@ export default function Form() {
     setFormStates(defaultFormState);
   }
 
+  const labelStyle = { fontFamily: "robotoRegular" };
+  const inputStyle = { fontFamily: "HelveticaCondensed" };
+
   return (
     <Flex flexDir='column' w='100%' maxW='668px' textAlign='center' m='0 auto'>
       <Heading
@@ -59,43 +63,43 @@ export default function Form() {
       </Heading>
       <form onSubmit={handleSubmit}>
         <FormControl py='0.5rem'>
-          <FormLabel fontFamily='robotoRegular'>Nome</FormLabel>
+          <FormLabel sx={labelStyle}>Nome</FormLabel>
           <Input
             placeholder='seu nome'
             name='name'
             value={name}
             onChange={onChange}
-            fontFamily='HelveticaCondensed'
+            sx={inputStyle}
           />
         </FormControl>
         <FormControl py='0.5rem'>
-          <FormLabel fontFamily='robotoRegular'>Email</FormLabel>
+          <FormLabel sx={labelStyle}>Email</FormLabel>
           <Input
             placeholder='email@email.com'
             name='email'
             value={email}
             onChange={onChange}
-            fontFamily='HelveticaCondensed'
+            sx={inputStyle}
           />
         </FormControl>
         <FormControl py='0.5rem'>
-          <FormLabel fontFamily='robotoRegular'>Nascimento</FormLabel>
+          <FormLabel sx={labelStyle}>Nascimento</FormLabel>
           <Input
             placeholder='dd/mm/year'
             name='birth'
             value={birth}
             onChange={onChange}
-            fontFamily='HelveticaCondensed'
+            sx={inputStyle}
           />
         </FormControl>
         <FormControl py='0.5rem'>
-          <FormLabel fontFamily='robotoRegular'>Telefone</FormLabel>
+          <FormLabel sx={labelStyle}>Telefone</FormLabel>
           <Input
             placeholder='(DD) 99999-9999'
             name='number'
             value={number}
             onChange={onChange}
-            fontFamily='HelveticaCondensed'
+            sx={inputStyle}
           />
         </FormControl>
         <Button
@@ -108,10 +112,10 @@ export default function Form() {
           w='100%'
           maxW='468px'
           h='100%'
-          fontFamily='HelveticaUltraLt'
           fontWeight='200'
           isLoading={isLoading}
           p='0.5rem'
+          fontFamily='HelveticaUltraLt'
         >
           Cadastrar
         </Button>

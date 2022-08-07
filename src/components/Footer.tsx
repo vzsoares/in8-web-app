@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Flex, Text } from "@chakra-ui/react";
 
 export default function Footer() {
+  const textStyle = { fontFamily: "RobotoLight", fontWeight: "300" };
   return (
     <Flex
       alignItems='center'
@@ -18,16 +19,14 @@ export default function Footer() {
       p='2rem'
     >
       <Box color='white' textAlign='center'>
-        <Text py='0.5rem' fontFamily='RobotoLight' fontWeight='300'>
+        <Text py='0.5rem' sx={textStyle}>
           Vinicius Zenha De Oliveira Soares
         </Text>
-        <Text pb='0.5rem' fontFamily='RobotoLight' fontWeight='300'>
+        <Text pb='0.5rem' sx={textStyle}>
           vinicius.zenha@gmail.com
         </Text>
-        <Text fontFamily='RobotoLight' fontWeight='300'>
-          (31)9 9203-7581
-        </Text>
-        <Text py='0.5rem' fontFamily='RobotoLight' fontWeight='300'>
+        <Text sx={textStyle}>(31)9 9203-7581</Text>
+        <Text py='0.5rem' sx={textStyle}>
           Teste i8n
         </Text>
       </Box>

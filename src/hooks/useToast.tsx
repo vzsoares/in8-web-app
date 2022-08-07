@@ -9,6 +9,7 @@ export default function useCustomToast() {
       status: "error",
       isClosable: true,
     });
+
   const successToast = (message: string) =>
     toast({
       description: message,
