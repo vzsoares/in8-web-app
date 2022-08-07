@@ -6,7 +6,7 @@ const defaultValue = { postUser: async (data: User) => 0 };
 const AppCtx = createContext(defaultValue);
 
 function AppCtxProvider({ children }: { children: JSX.Element }) {
-  async function postUser(data: User) {
+  function postUser(data: User) {
     const URL = "http://localhost:4000/api/users";
 
     const myHeaders = new Headers();
@@ -20,10 +20,11 @@ function AppCtxProvider({ children }: { children: JSX.Element }) {
       redirect: "follow",
     };
 
-    const response = await fetch(URL, requestOptions)
+    const response = fetch(URL, requestOptions)
       .then((r) => r.status)
       .catch(() => 400);
-    return response ?? 0;
+
+    return response;
   }
 
   const data = useMemo(() => {
