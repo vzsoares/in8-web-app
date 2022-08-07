@@ -41,11 +41,13 @@ The layout and it's requirements were provided. you can see them at `public/`.
 
 - instal deps with `yarn install`
 - run `yarn start` to start app
+  > - note:
+  > - - server port `3000`
 
 ### server
 
 - change directory to `/server` with `cd server/`
-- instal deps with yarn install
+- instal deps with `yarn install`
 - run `yarn dev` to start server
   > - note:
   > - - server port `4000`
