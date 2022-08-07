@@ -107,7 +107,7 @@ export default function Form() {
           mt='1rem'
           backgroundColor='#012d51'
           color='#29abe2'
-          fontSize='3rem'
+          fontSize='2.5rem'
           borderRadius='none'
           w='100%'
           maxW='468px'

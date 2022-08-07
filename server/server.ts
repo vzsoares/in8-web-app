@@ -1,9 +1,6 @@
 import express from "express";
-// const express = require("express");
 import cors from "cors";
-// const cors = require("cors");
 import usersRouter from "./routers/users-router";
-// const usersRouter = require("./routers/users-router");
 
 const app = express();
 const port = 4000;
