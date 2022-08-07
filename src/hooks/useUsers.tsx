@@ -6,7 +6,7 @@ export default function useUsers() {
   const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
   const { data, error } = useSWR<User[] | undefined>(URL, fetcher, {
-    refreshInterval: 1000,
+    // refreshInterval: 1000,
   });
 
   return {

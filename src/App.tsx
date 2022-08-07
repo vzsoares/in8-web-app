@@ -1,6 +1,7 @@
 import React from "react";
-import Form from "./components/Form";
 import { Box, Flex, Heading } from "@chakra-ui/react";
+
+import Form from "./components/Form";
 import Navbar from "./components/Navbar";
 import RegisteredList from "./components/RegisteredTable";
 import Footer from "./components/Footer";

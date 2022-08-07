@@ -19,6 +19,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import useUsers from "../hooks/useUsers";
+
 import { User } from "../models/User";
 
 export default function RegisteredList() {

@@ -9,13 +9,13 @@ function AppCtxProvider({ children }: { children: JSX.Element }) {
   function postUser(data: User) {
     const URL = "http://localhost:4000/api/users";
 
-    const myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
+    const headers = new Headers();
+    headers.append("Content-Type", "application/json");
 
     const raw = JSON.stringify(data);
     const requestOptions: RequestInit = {
       method: "POST",
-      headers: myHeaders,
+      headers: headers,
       body: raw,
       redirect: "follow",
     };
