@@ -23,3 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 server/db.sqlite
 db.sqlite
+
+server/node_modules

@@ -1,4 +1,4 @@
-const sqlite3 = require("sqlite3");
+import sqlite3 from "sqlite3";
 
 const DBSOURCE = "db.sqlite";
 
@@ -26,4 +26,4 @@ const database = new sqlite3.Database(DBSOURCE, (err) => {
   }
 });
 
-module.exports = database;
+export default database;

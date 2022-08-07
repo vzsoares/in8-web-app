@@ -1,11 +1,13 @@
-const express = require("express");
-const userRepository = require("../repositories/users-repository.js");
+import express from "express";
+import userRepository from "../repositories/users-repository";
+
+import { User } from "../../src/models/User";
 
 const usersRouter = express.Router();
 
 // post
 usersRouter.post("/users", (req, res) => {
-  const user = req.body;
+  const user: User = req.body;
   userRepository.post(user, (id) => {
     if (id) {
       res.status(201).location(`/itens/${id}`).send();
@@ -17,7 +19,7 @@ usersRouter.post("/users", (req, res) => {
 
 // get all
 usersRouter.get("/users", (req, res) => {
-  userRepository.readAll((itens) => res.json(itens));
+  userRepository.readAll((itens: User[]) => res.json(itens));
 });
 
-module.exports = usersRouter;
+export default usersRouter;

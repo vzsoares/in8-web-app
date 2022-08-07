@@ -1,6 +1,9 @@
-const express = require("express");
-const cors = require("cors");
-const usersRouter = require("./routers/users-router");
+import express from "express";
+// const express = require("express");
+import cors from "cors";
+// const cors = require("cors");
+import usersRouter from "./routers/users-router";
+// const usersRouter = require("./routers/users-router");
 
 const app = express();
 const port = 4000;
@@ -19,6 +22,10 @@ app.use(
 );
 
 app.use("/api", usersRouter);
+
+app.use((req, res) => {
+  res.status(404);
+});
 
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
